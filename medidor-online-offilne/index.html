@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste se está online</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <style>
+        .status{
+            max-width: 150px;
+            border:solid 2px black;
+            font-size: 30px;
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+            border-radius: 50px;
+        }
+        .online{
+            background: chartreuse;
+            color: #fff;
+        }
+
+        .offline{
+            background-color: #f00;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <i class="bi bi-wifi"></i>
+    <i class="bi bi-wifi-off"></i> -->
+
+    <div class="status">
+        <i class="icon"></i>
+        <span class="status-desc"></span>
+    </div>
+
+    <script>
+        const statusDiv = document.querySelector(".status");
+        const statusDesc = document.querySelector(".status-desc");
+        const iconeStatus = document.querySelector(".icon");
+
+        const statusTexto = navigator.onLine ? "Online" : "Offline";
+
+
+        if(statusTexto === "Online"){
+            statusDesc.innerText = statusTexto;
+            iconeStatus.setAttribute("class" , "bi bi-wifi");
+            statusDiv.classList.add("online");
+        }else{
+            statusDesc.innerText = statusTexto;
+            iconeStatus.setAttribute("class" , "bi bi-wifi-off");
+        }
+
+
+        window.addEventListener("online" , ()=>{
+            statusDiv.classList.remove("offline");
+            statusDesc.innerText = "Online";
+            iconeStatus.setAttribute("class" , "bi bi-wifi");
+            statusDiv.classList.add("online");
+        })
+
+        window.addEventListener("offline" , ()=>{
+            statusDiv.classList.remove("online");
+            statusDesc.innerText = "Offline";
+            iconeStatus.setAttribute("class" , "bi bi-wifi-off");
+            statusDiv.classList.add("offline");
+        })
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+
+</html>
