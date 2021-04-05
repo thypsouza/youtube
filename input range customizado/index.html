@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider-Customizado</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            overflow: hidden;
+            background-color: #444;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+        }
+
+        [type="range"]{
+            transform: scale(1.5);
+            appearance: none;
+            display: block;
+            background-color: #29d;
+            border-radius: 10px;
+            padding: 5px;
+            outline: none;
+        }
+
+        [type="range"]::-webkit-slider-thumb{
+            appearance: none;
+            display: block;
+            width: 20px;
+            height: 40px;
+            background-color: rgb(242, 255, 58);
+            
+        }
+
+        [type="range"]::-moz-range-thumb{
+            appearance: none;
+            display: block;
+            width: 20px;
+            height: 40px;
+            background-color: rgb(242, 255, 58);
+        }
+        
+       
+    </style>
+</head>
+<body>
+    
+    <input type="range" value="0">
+
+</body>
+</html>
